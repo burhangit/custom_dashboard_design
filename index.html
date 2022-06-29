@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart</title>
+    <script
+      src="https://kit.fontawesome.com/b601a76762.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./responsive.css">
+  </head>
+  <body>
+    <div class="container-xxl">
+      <!---------- header start from here------------>
+      <header id="header">
+        <!-------- navbar start from here ----------->
+        <nav id="nav">
+          <div class="nav_left_part">
+              <div class="btn-group">
+                <button
+                  class="btn btn-default btn-sm dropdown-toggle custom_dropdown"
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                <span class="caret"></span>
+                </button>
+              </div>
+            </button>
+          </div>
+
+          <div class="nav_mid_part">
+            <span class="nav_user">
+              <i class="fa-solid fa-users"></i>
+            </span>
+            <span class="last_updated">
+              <h5>Last Updated:Thursday 09 june 2022 06:56 UAE</h5>
+            </span>
+            <span class="nav_user_profile">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span class="user_name">
+              <h5>Hi Burhan</h5>
+            </span>
+          </div>
+
+          <div class="nav_buttons">
+            <button class="change_pw" type="button">
+              <i class="fa-regular fa-pen-to-square"></i> Change Password
+            </button>
+            <button class="sign_out" type="button">
+              <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+            </button>
+            <button class="admin" type="button">
+              <i class="fa-solid fa-user-gear"></i> Admin
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <div class="header_bottom_btn">
+        <button>PSV Performance</button>
+      </div>
+<!----------- banner start from here  ---------->
+      <div class="banner">
+        <div class="banner_cases_boxex">
+          <div class="banner_box" id="box1">
+            <div class="box_left">
+              <small>610</small>
+              <p>MTD Recieve Cases | +59% MOM</p>
+            </div>
+            <div class="box_right">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <div class="banner_box" id="box2">
+            <div class="box_left">
+              <small>640</small>
+              <p>MTD Recieve Cases | +25% MOM</p>
+            </div>
+            <div class="box_right">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+          </div>
+          <div class="banner_box" id="box3">
+            <div class="box_left">
+              <small>1.6%</small>
+              <p>MTD Recieve Cases | +59% MOM</p>
+            </div>
+            <div class="box_right">
+              <i class="fa-solid fa-user-xmark"></i>
+            </div>
+          </div>
+          <div class="banner_box" id="box4">
+            <div class="box_left">
+              <small>3.3%</small>
+              <p>MTD Recieve Cases | +59% MOM</p>
+            </div>
+            <div class="box_right">
+              <i class="fa-solid fa-user-lock"></i>
+            </div>
+          </div>
+        </div>
+
+        <!------ banner carts ---------->
+        <div class="banner_carts">
+          <!------ banner left cart ----->
+          <div class="banner_left_cart">
+            <div class="banner_left_cart_header">
+              <p>Cases recieved, and completed turnaround time</p>
+              <div class="banner_left_cart_header_icons">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <i class="fa-regular fa-window-minimize"></i>
+                <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+              </div>
+            </div>
+            <!-------- banner left cart nav --------->
+            <div class="banner_left_cart_nav">
+              <div class="banner_left_cart_btns">
+                <ul>
+                  <b><li><i class="fa-solid fa-check"></i><a href="#">15D</a></li></b>
+                  <li><a href="#">15W </a></li>
+                  <li><a href="#">15M</a></li>
+                </ul>
+              </div>
+              
+              <div class="banner_left_cart_dropdown">
+                <div class="btn-group">
+                  <button
+                    class="btn btn-default btn-sm dropdown-toggle custom_dropdown"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Case Type <span class="caret"></span>
+                  </button>
+                </div>
+              </div>
+            
+              <div class="banner_left_cart_btns">
+                <ul>
+                  <b><li><a  data-toggle="tab" href="#container"><i class="fa-solid fa-check"></i>Recieved</a></li></b>
+                  <li><a  data-toggle="tab" href="#container2">Completed</a></li>
+                  
+                </ul>
+              </div>
+            </div><br>
+            <!------------- banner chart graph ------------>
+            <div class="banner_chart_graph tab-content">
+              <div id="container" class="tab-pane fade in active" ></div>
+              <div id="container2" class="tab-pane fade in"></div>
+            </div>
+
+            <div class="banner_chart_bottom_row"></div>
+          </div>
+
+
+          <!-------- banner right cart -------->
+          <div class="banner_right_cart">
+            <div class="banner_right_cart_header">
+              <p>Cases recieved, and completed turnaround time</p>
+              <div class="banner_right_cart_header_icons">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <i class="fa-regular fa-window-minimize"></i>
+                <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+              </div>
+            </div>
+            
+
+            <!-- banner right cart nav -->
+            <div class="banner_right_cart_nav">
+              <!-- banner left cart buttons -->
+              <div class="banner_right_cart_dropdown">
+                <div class="btn-group">
+                  <button
+                    class="btn btn-default btn-sm dropdown-toggle custom_dropdown"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Case Type <span class="caret"></span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="banner_right_cart_btns">
+                <ul>
+                  <b><li ><a data-toggle="tab" href="#nationality"><i class="fa-solid fa-check"></i>Nationality</a></li></b>
+                  <li><a data-toggle="tab" href="#profession">Profession</a></li>
+                </ul>
+              </div>  
+            </div>
+          
+          
+            <!------ right cart Tab panes ----->
+              <div class="tab-content">
+                <div id="nationality" class="tab-pane fade in active">
+                  <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Nationality</th>
+                          <th>Recieve</th>
+                          <th>Completed</th>
+                          <th>Average TAT(days)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>India</td>
+                          <td>303</td>
+                          <td>333</td>
+                          <td>19</td>
+                        </tr>
+                        <tr>
+                          <td>canada</td>
+                          <td>203</td>
+                          <td>133</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>UAE</td>
+                          <td>103</td>
+                          <td>133</td>
+                          <td>8</td>
+                        </tr>
+                        <tr>
+                          <td>Afganistan</td>
+                          <td>902</td>
+                          <td>222</td>
+                          <td>83</td>
+                        </tr>
+                        <tr>
+                          <td>United state</td>
+                          <td>93</td>
+                          <td>33</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>Switzerland</td>
+                          <td>13</td>
+                          <td>3</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>Bali</td>
+                          <td>122</td>
+                          <td>14</td>
+                          <td>3</td>
+                        </tr>
+
+                        <tr>
+                          <td>Bali</td>
+                          <td>122</td>
+                          <td>14</td>
+                          <td>3</td>
+                        </tr>
+
+                        <tr>
+                          <td>Bali</td>
+                          <td>122</td>
+                          <td>14</td>
+                          <td>3</td>
+                        </tr>
+
+                        <tr>
+                          <td>Bali</td>
+                          <td>122</td>
+                          <td>14</td>
+                          <td>3</td>
+                        </tr>
+
+                        <tr>
+                          <td>Bali</td>
+                          <td>122</td>
+                          <td>14</td>
+                          <td>3</td>
+                        </tr>
+
+                        <tr style="background-color:#dadada"> 
+                          <th>Overall</th>
+                          <th>2201</th>
+                          <th>2300</th>
+                          <th>200</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+
+                <div id="profession" class="tab-pane fade">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Profession</th>
+                        <th>Recieve</th>
+                        <th>Completed</th>
+                        <th>Average TAT(days)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Engineer</td>
+                        <td>303</td>
+                        <td>333</td>
+                        <td>19</td>
+                      </tr>
+                      <tr>
+                        <td>Teacher</td>
+                        <td>203</td>
+                        <td>133</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>Fighter</td>
+                        <td>103</td>
+                        <td>133</td>
+                        <td>8</td>
+                      </tr>
+                      <tr>
+                        <td>Shooter</td>
+                        <td>902</td>
+                        <td>222</td>
+                        <td>83</td>
+                      </tr>
+                      <tr>
+                        <td>Doctor</td>
+                        <td>93</td>
+                        <td>33</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>Athelete</td>
+                        <td>13</td>
+                        <td>3</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>Cricketer</td>
+                        <td>122</td>
+                        <td>14</td>
+                        <td>3</td>
+                      </tr>
+
+                      <tr>
+                        <td>Footballer</td>
+                        <td>122</td>
+                        <td>14</td>
+                        <td>3</td>
+                      </tr>
+
+                      <tr>
+                        <td>Minister</td>
+                        <td>122</td>
+                        <td>14</td>
+                        <td>3</td>
+                      </tr>
+
+                      <tr>
+                        <td>Producer</td>
+                        <td>122</td>
+                        <td>14</td>
+                        <td>3</td>
+                      </tr>
+
+                      <tr>
+                        <td>Photographer</td>
+                        <td>122</td>
+                        <td>14</td>
+                        <td>3</td>
+                      </tr>
+
+                      <tr style="background-color:#dadada"> 
+                        <th>Overall</th>
+                        <th>2201</th>
+                        <th>2300</th>
+                        <th>200</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>   
+              </div>
+
+              <!------ right cart bottom buttons ------>
+              <div class="right_cart_bottom_btns">
+                <ul>
+                  <b><li style=" border-bottom-left-radius: 3px;
+                    border-top-left-radius: 3px;"><a data-toggle="tab" href="#today">Today</a></li></b>
+                  <li><a data-toggle="tab" href="#yesterday">Yesterday</a></li>
+                  <b><li style="background-color:#417771"><a data-toggle="tab" href="#mtd"><i class="fa-solid fa-check"></i>MTD</a></li></b>
+                  <li><a data-toggle="tab" href="#ytd">YTD</a></li>
+                  <li><a data-toggle="tab" href="#ytd">Custom</a></li>
+
+                </ul>
+              </div> 
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="newChart.js"></script>
+    <script src="chart2.js"></script>
+  </body>
+</html>
